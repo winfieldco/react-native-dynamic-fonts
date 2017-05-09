@@ -6,5 +6,10 @@
   "nativePackage": true,
   "license": "MIT",
   "url": "https://github.com/eVisit/react-native-dynamic-fonts",
+  "email": "tech@evisit.com",
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/eVisit/react-native-dynamic-fonts.git"
+  },
   "author": "eVisit (Wyatt Greenway)"
 }
