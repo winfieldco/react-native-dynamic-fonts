@@ -1,13 +1,13 @@
 {
   "name": "react-native-dynamic-fonts",
   "main": "index.js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React Native Dynamic Fonts",
   "nativePackage": true,
   "license": "MIT",
   "url": "https://github.com/eVisit/react-native-dynamic-fonts",
   "email": "tech@evisit.com",
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "https://github.com/eVisit/react-native-dynamic-fonts.git"
   },
