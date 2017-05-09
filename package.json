@@ -5,6 +5,6 @@
   "description": "React Native Dynamic Fonts",
   "nativePackage": true,
   "license": "MIT",
-  "url": "https://github.com/th317erd/react-native-dynamic-fonts",
-  "author": "Wyatt Greenway (th317erd)"
+  "url": "https://github.com/eVisit/react-native-dynamic-fonts",
+  "author": "eVisit (Wyatt Greenway)"
 }
