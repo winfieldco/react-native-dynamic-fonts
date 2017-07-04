@@ -11,5 +11,6 @@
     "type": "git",
     "url": "https://github.com/eVisit/react-native-dynamic-fonts.git"
   },
-  "author": "eVisit (Wyatt Greenway)"
+  "author": "eVisit (Wyatt Greenway)",
+  "dependencies": {}
 }

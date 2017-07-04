@@ -7,15 +7,21 @@
  
 const { NativeModules } = require('react-native');
 const { DynamicFonts } = NativeModules;
+const loadedFonts = {};
 
 module.exports = {
-	loadFont: function(name, data, type) {
+	loadFont: function(name, data, type, forceLoad) {
+    /* Check if this font was already loaded */
+    if (!forceLoad && loadedFonts[name])
+      return Promise.resolve(loadedFonts[name]);
+
 		if (!name)
 			throw new Error('Name is a required argument');
 
 		if (!data)
 			throw new Error('Data is a required argument');
 
+    /* Load font via native binary code */
 		return new Promise(function(resolve, reject) {
 			DynamicFonts.loadFont({
 				name: name,
@@ -27,8 +33,20 @@ module.exports = {
 					return;
 				}
 
+        /* Loaded successfully... resolve promise with "real" font name */
+        loadedFonts[name] = givenName;
 				resolve(givenName);
 			});
 		});
+	},
+  loadFonts: function(_fontList, forceLoad) {
+    var fontList = _fontList;
+    if (!fontList)
+      return Promise.resolve([]);
+
+    if (!(fontList instanceof Array))
+      fontList = [fontList];
+
+		return Promise.all(fontList.filter((font) => font).map((font) => loadFont(font.name, font.data, font.type, forceLoad)));
 	}
 }

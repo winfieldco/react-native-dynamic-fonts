@@ -59,12 +59,17 @@ A React Native module that allows you to load fonts dynamically at runtime via b
 
 To load a font dynamically, you must first have a base64 string of your font file (TTF or OTF):
 ```javascript
-import { loadFont } from 'react-native-dynamic-fonts';
+import { loadFont, loadFonts } from 'react-native-dynamic-fonts';
 
 ...
-
-loadFonts('nameOfFont', base64FontString, 'ttf').then(function(name) {
+/* Load a single font */
+loadFont('nameOfFont', base64FontString, 'ttf').then(function(name) {
 	console.log('Loaded font successfully. Font name is: ', name);
+});
+
+/* Load a list of fonts */
+loadFonts([{name: 'nameOfFont', data: base64FontString, type: 'ttf'}]).then(function(names) {
+	console.log('Loaded all fonts successfully. Font names are: ', names);
 });
 
 ...
