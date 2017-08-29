@@ -63,6 +63,13 @@ RCT_EXPORT_METHOD(loadFont:(NSDictionary *)options callback:(RCTResponseSenderBl
   
   CGFontRef newFont = CGFontCreateWithDataProvider(fontDataProvider);
   NSString *newFontName = (__bridge NSString *)CGFontCopyPostScriptName(newFont);
+
+  UIFont* font = [UIFont fontWithName:newFontName size:16];
+  if (font != nil) {
+    CGDataProviderRelease(fontDataProvider);
+    callback(@[[NSNull null], newFontName]);
+    return;
+  }
   
   CFErrorRef error;
   if (! CTFontManagerRegisterGraphicsFont(newFont, &error)) {
