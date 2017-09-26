@@ -5,7 +5,7 @@
  * directory of this source tree.
  */
 
-#import <React/RCTBridgeModule.h>
+#import "RCTBridgeModule.h"
 
 @interface DynamicFonts: NSObject <RCTBridgeModule>
 
