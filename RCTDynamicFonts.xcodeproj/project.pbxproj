@@ -208,9 +208,8 @@
 					"$(SRCROOT)/../node_modules/react-native-opentok-chat/OpenTok-iOS",
 				);
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../ios/Pods/Headers/Public/**",
 					"$(inherited)",
-					"$(SRCROOT)/../react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -228,9 +227,8 @@
 					"$(SRCROOT)/../node_modules/react-native-opentok-chat/OpenTok-iOS",
 				);
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../ios/Pods/Headers/Public/**",
 					"$(inherited)",
-					"$(SRCROOT)/../react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
