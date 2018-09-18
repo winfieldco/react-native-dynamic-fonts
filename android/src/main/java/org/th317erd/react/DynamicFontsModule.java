@@ -104,7 +104,9 @@ class DynamicFontsModule extends ReactContextBaseJavaModule {
       Typeface typeface = Typeface.createFromFile(cacheFile);
 
       //Cache the font for react
-      ReactFontManager.getInstance().setTypeface(name, typeface.getStyle(), typeface);
+      //XXX Every typeface is unique by its name, they will all be set with the same style
+      //otherwise only regular font styles will render in Android...
+      ReactFontManager.getInstance().setTypeface(name, Typeface.NORMAL, typeface);
 
       cacheFile.delete();
     } catch(Exception e) {
